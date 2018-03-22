@@ -1,5 +1,5 @@
 export interface Note {
-  content: string;
+  title: string;
   hearts: number;
   id?: string;
   time: number;
