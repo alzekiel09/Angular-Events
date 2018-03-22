@@ -1,11 +1,11 @@
 export const environment = {
     production: false,
     firebaseConfig: {
-        apiKey: 'APIKEY',
-        authDomain: 'DEV-APP.firebaseapp.com',
-        databaseURL: 'https://DEV-APP.firebaseio.com',
-        projectId: 'DEV-APP',
-        storageBucket: 'DEV-APP.appspot.com',
-        messagingSenderId: '123456789'
+        apiKey: "AIzaSyAVufAsFlkNqBkDRY-zCBvDMWAfw3BQEcM",
+		authDomain: "angular-events-e5bbf.firebaseapp.com",
+		databaseURL: "https://angular-events-e5bbf.firebaseio.com",
+		projectId: "angular-events-e5bbf",
+		storageBucket: "angular-events-e5bbf.appspot.com",
+		messagingSenderId: "552510010866"
     }
 };
