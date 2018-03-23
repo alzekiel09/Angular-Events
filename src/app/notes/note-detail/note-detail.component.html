@@ -1,8 +1,19 @@
 <div>
-  <h3>{{ note.title }}</h3>
+  <h3>{{ note.content }}</h3>
+  <p><b>Event Place: </b>{{ note.content }}</p>
+  <p><b>Event Date: </b>{{ note.content }}</p>
+  <p><b>Event Time: </b>{{ note.content }}</p>
+  <p><b>Event Description: </b>{{ note.content }}</p>
+  <p><b>Event Registration: </b>{{ note.content }}</p>
   <span class="button is-small is-info" (click)='addHeartToNote(note.hearts)'>
-    Heart <i class="fa fa-heart"></i>
+    {{ note.hearts || 0 }}<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;Like
   </span>
-  <span class="button is-small is-danger" (click)='deleteNote(note?.id)'>Delete</span>
-  <p>This note has been hearted {{ note.hearts || 0 }} times.</p>
-</div>
+  <span class="button is-small is-warning" (click)='addDislikeToNote(note.dislike)'>
+    {{ note.dislike || 0 }}<i class="fa fa-thumbs-down"></i>&nbsp;&nbsp;Dislike
+  </span>
+  <span class="button is-small is-danger" (click)='deleteNote(note?.id)'>
+    <i class="fa fa-trash"></i>&nbsp;&nbsp;Delete
+  </span>
+  <p>This Event has been like {{ note.hearts || 0 }} times.</p>
+  <p>This Event has been dislike {{ note.dislike || 0 }} times.</p>
+</div><hr>

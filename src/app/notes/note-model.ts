@@ -1,6 +1,7 @@
 export interface Note {
-  title: string;
+  content: string;
   hearts: number;
+  dislike: number;
   id?: string;
   time: number;
 }

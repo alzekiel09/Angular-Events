@@ -1,13 +1,19 @@
 <h1>Sportify Events</h1>
 <p>Input the details of the event below.</p>
 
-<input [(ngModel)]="content" placeholder="Event name " class="input">
-<input [(ngModel)]="place" placeholder="Event Place" class="input">
-<input [(ngModel)]="edate" class="input" type="date">
-<textarea ng-model="edetails" placeholder="Event Details. . ." class="input" style="height:20%"></textarea>
+
+<input [(ngModel)]="content" placeholder="Event title" class="input">
+<input [(ngModel)]="content" placeholder="Event place" class="input">
+<input [(ngModel)]="content" placeholder="Event Date" class="input" type="date">
+<input [(ngModel)]="content" placeholder="Event title" class="input" type="time">
+<textarea ng-model="content" placeholder="Event Description" class="input" style="height:10%"></textarea>
+<form>
+	<input [(ngModel)]="content" name="registration" value="Free" ng-value="'Free'" type="radio"> Free
+	<input [(ngModel)]="content" name="registration" value="Paid" ng-value="'Paid'" type="radio"> Paid
+</form>
 
 <button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
-  Set Event
+  <i class="fa fa-calendar"></i>&nbsp;&nbsp;Set Event
 </button>
 <hr>
 <div *ngFor="let note of notes | async">
