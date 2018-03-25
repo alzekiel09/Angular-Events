@@ -5,6 +5,7 @@ import { NoteService } from '../note.service';
 import { Note } from '../note-model';
 
 import { Observable } from 'rxjs/Observable';
+import { NotifyService } from '../../core/notify.service';
 
 @Component({
   selector: 'notes-list',
@@ -21,7 +22,7 @@ export class NotesListComponent implements OnInit {
   description: string;
   registration: string;
 
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService, private notify: NotifyService) { }
 
   ngOnInit() {
     // this.notes = this.noteService.getData()
@@ -36,6 +37,7 @@ export class NotesListComponent implements OnInit {
 	this.etime = '';
 	this.description = '';
 	this.registration = '';
+	this.notify.update('Event SuccessFully Added !!!', 'success');
   }
 
 }
