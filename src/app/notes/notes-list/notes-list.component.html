@@ -60,12 +60,9 @@
 </div>
 </div>
 <hr>
-
-  
-          <h1 class="center">Sportify Events</h1>
-          <div *ngFor="let note of notes | async" >
-            <note-detail [note]="note" class="column-lg-2"></note-detail>
-          
+<h1 class="center">Sportify Events</h1>
+  <div class="card" style="padding:20px;" *ngFor="let note of notes | async" >
+	<note-detail [note]="note" class="column-lg-2"></note-detail>      
   </div>
       
     
