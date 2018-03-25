@@ -1,6 +1,7 @@
-<h1>Sportify Events</h1>
-<p>Input the details of the event below.</p>
 
+
+<div class="card" style="padding:20px;">
+    <h1>Create an event</h1>
 <div class="field">
   <p class="control has-icons-left has-icons-right">
     <input [(ngModel)]="content" placeholder="Event name" class="input">
@@ -57,10 +58,15 @@
   <i class="fa fa-calendar"></i>&nbsp;&nbsp;Set Event
 </button>
 </div>
+</div>
 <hr>
 
-<div *ngFor="let note of notes | async">
-  <note-detail [note]="note"></note-detail>
-</div>
-
+  
+          <h1 class="center">Sportify Events</h1>
+          <div *ngFor="let note of notes | async" >
+            <note-detail [note]="note" class="column-lg-2"></note-detail>
+          
+  </div>
+      
+    
 
