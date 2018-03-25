@@ -1,18 +1,64 @@
 <h1>Sportify Events</h1>
 <p>Input the details of the event below.</p>
 
-
-<input [(ngModel)]="content" placeholder="Event title" class="input">
-<input [(ngModel)]="location" placeholder="Event place" class="input">
-<input [(ngModel)]="edate" placeholder="Event Date" class="input" type="date">
-<input [(ngModel)]="etime" class="input" type="time">
-<textarea [(ngModel)]="description" placeholder="Event Description" class="input" style="height:10%"></textarea>
-<input [(ngModel)]="registration" placeholder="Registration" class="input" type="text">
-
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input [(ngModel)]="content" placeholder="Event name" class="input">
+    <span class="icon is-normal is-left">
+      <i class="fa fa-address-book"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input [(ngModel)]="location" placeholder="Event place" class="input">
+    <span class="icon is-normal is-left">
+      <i class="fa fa-map-marker"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input [(ngModel)]="edate" placeholder="Event Date" class="input" type="date">
+    <span class="icon is-normal is-left">
+      <i class="fa fa-calendar"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input [(ngModel)]="etime" class="input" type="time">
+    <span class="icon is-normal is-left">
+      <i class="fa fa-clock-o"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <textarea [(ngModel)]="description" placeholder="Event Description" class="input" style="height:10%"></textarea>
+    <span class="icon is-normal is-left">
+      <i class="fa fa-file-text"></i>
+    </span>
+  </p>
+</div>
+<div class="control">
+  <label><b>Registration type: &nbsp;&nbsp;</b></label>
+  <label class="radio">
+    <input type="radio" name="answer" [(ngModel)]="registration" value="Free" ng-value="'Free'">
+    Free
+  </label>
+  <label class="radio">
+    <input type="radio" name="answer" [(ngModel)]="registration" value="Paid" ng-value="'Paid'">
+    Paid
+  </label>
+</div><br>
+<div class="field is-grouped">
 <button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
   <i class="fa fa-calendar"></i>&nbsp;&nbsp;Set Event
 </button>
+</div>
 <hr>
+
 <div *ngFor="let note of notes | async">
   <note-detail [note]="note"></note-detail>
 </div>
