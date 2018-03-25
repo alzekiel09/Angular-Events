@@ -3,14 +3,11 @@
 
 
 <input [(ngModel)]="content" placeholder="Event title" class="input">
-<input [(ngModel)]="content" placeholder="Event place" class="input">
-<input [(ngModel)]="content" placeholder="Event Date" class="input" type="date">
-<input [(ngModel)]="content" placeholder="Event title" class="input" type="time">
-<textarea ng-model="content" placeholder="Event Description" class="input" style="height:10%"></textarea>
-<form>
-	<input [(ngModel)]="content" name="registration" value="Free" ng-value="'Free'" type="radio"> Free
-	<input [(ngModel)]="content" name="registration" value="Paid" ng-value="'Paid'" type="radio"> Paid
-</form>
+<input [(ngModel)]="location" placeholder="Event place" class="input">
+<input [(ngModel)]="edate" placeholder="Event Date" class="input" type="date">
+<input [(ngModel)]="etime" class="input" type="time">
+<textarea [(ngModel)]="description" placeholder="Event Description" class="input" style="height:10%"></textarea>
+<input [(ngModel)]="registration" class="input" type="text">
 
 <button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
   <i class="fa fa-calendar"></i>&nbsp;&nbsp;Set Event

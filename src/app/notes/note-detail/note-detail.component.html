@@ -1,10 +1,10 @@
 <div>
   <h3>{{ note.content }}</h3>
-  <p><b>Event Place: </b>{{ note.content }}</p>
-  <p><b>Event Date: </b>{{ note.content }}</p>
-  <p><b>Event Time: </b>{{ note.content }}</p>
-  <p><b>Event Description: </b>{{ note.content }}</p>
-  <p><b>Event Registration: </b>{{ note.content }}</p>
+  <p><b>Event Place: </b>{{ note.location }}</p>
+  <p><b>Event Date: </b>{{ note.edate }}</p>
+  <p><b>Event Time: </b>{{ note.etime }}</p>
+  <p><b>Event Description: </b>{{ note.description }}</p>
+  <p><b>Event Registration: </b>{{ note.registration }}</p>
   <span class="button is-small is-info" (click)='addHeartToNote(note.hearts)'>
     {{ note.hearts || 0 }}<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;Like
   </span>

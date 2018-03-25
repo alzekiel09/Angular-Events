@@ -9,6 +9,11 @@ import { map } from 'rxjs/operators';
 
 interface NewNote {
   content: string;
+  location: string;
+  edate: string;
+  etime: string;
+  description: string;
+  registration: string;
   hearts: 0;
   dislike: 0;
   time: number;
@@ -33,7 +38,8 @@ export class NoteService {
     return this.notesCollection.snapshotChanges().map((actions) => {
       return actions.map((a) => {
         const data = a.payload.doc.data() as Note;
-        return { id: a.payload.doc.id, content: data.content, hearts: data.hearts, dislike: data.dislike, time: data.time };
+        return { id: a.payload.doc.id, content: data.content, location: data.location, edate: data.edate, etime: data.etime,
+					description: data.description, registration: data.registration,	hearts: data.hearts, dislike: data.dislike, time: data.time };
       });
     });
   }
@@ -42,9 +48,14 @@ export class NoteService {
     return this.afs.doc<Note>(`notes/${id}`);
   }
 
-  create(content: string) {
+  create(content: string, location: string, edate: string, etime: string, description: string, registration: string) {
     const note = {
       content,
+	  location,
+	  edate,
+	  etime,
+	  description,
+	  registration,
       hearts: 0,
 	  dislike: 0,
       time: new Date().getTime(),

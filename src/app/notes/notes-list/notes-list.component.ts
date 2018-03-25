@@ -15,6 +15,11 @@ export class NotesListComponent implements OnInit {
 
   notes: Observable<Note[]>;
   content: string;
+  location: string;
+  edate: string;
+  etime: string;
+  description: string;
+  registration: string;
 
   constructor(private noteService: NoteService) { }
 
@@ -24,8 +29,13 @@ export class NotesListComponent implements OnInit {
   }
 
   createNote() {
-    this.noteService.create(this.content);
+    this.noteService.create(this.content, this.location, this.edate, this.etime, this.description, this.registration);
     this.content = '';
+	this.location = '';
+	this.edate = '';
+	this.etime = '';
+	this.description = '';
+	this.registration = '';
   }
 
 }
